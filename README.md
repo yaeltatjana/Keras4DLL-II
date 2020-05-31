@@ -4,7 +4,7 @@
 
 Pour cloner le projet avec les *submodules* :
 ```
-git clone --recursive -j8 https://gitlab.forge.hefr.ch/tb_19-20_iseli/keras4dll-ii.git
+git clone --recursive -j8 https://github.com/yaeltatjana/Keras4DLL-II.git
 ```
 
 Pour lancer l'exemple simple avec DLL :
