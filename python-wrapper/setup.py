@@ -10,7 +10,16 @@ setup(
             "wrapperlibmnist",
             ["wrapper.pyx"],
             language="c++",
-            libraries=['_dll_mnist_mylib'],
+            libraries=['dll_mnist_mylib'],
+            library_dirs=['../dll/release/lib'],
+            runtime_library_dirs=['../dll/release/lib'],
+        ),
+
+        Extension(
+            "mnist_reader",
+            ["mnist_reader.pyx"],
+            language="c++",
+            libraries=['dll_mnist_mylib'],
             library_dirs=['../dll/release/lib'],
             runtime_library_dirs=['../dll/release/lib'],
         )

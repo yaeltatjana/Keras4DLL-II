@@ -12,8 +12,22 @@ cdef extern from "../dll/python-wrapper-lib/mnist_lib.h":
 
     # Class for getting dataset and training/evaluating a neural network
     cdef cppclass MnistLib:
-            MnistLib()
-            Dataset getDataset()
+        MnistLib()
+
+        Dataset getDataset()
+
+        void createNet(size_t nb_visibles, size_t nb_hiddens, size_t learning_rate)
+
+        void displayNet()
+
+        void displayDataset()
+
+        void displayDatasetPretty()
+
+        float train(size_t epochs)
+
+        void evaluate()
+
 
     # Function that exectues the simple example
     cdef void doSimpleExample() nogil
