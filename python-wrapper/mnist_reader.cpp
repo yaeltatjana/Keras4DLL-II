@@ -612,7 +612,6 @@ static CYTHON_INLINE float __PYX_NAN() {
 #include "new"
 #include "stdexcept"
 #include "typeinfo"
-#include <memory>
 #include <vector>
 #include <stdint.h>
 #include "../dll/python-wrapper-lib/MnistReader.h"
@@ -830,6 +829,21 @@ static const char *__pyx_f[] = {
 
 /*--- Type declarations ---*/
 struct __pyx_obj_12mnist_reader_PyMnistReader;
+struct __pyx_t_12mnist_reader_mystruct;
+
+/* "mnist_reader.pxd":5
+ * 
+ * 
+ * cdef struct mystruct:             # <<<<<<<<<<<<<<
+ *     vector[vector[uint8_t]] training_images
+ *     vector[vector[uint8_t]] test_images
+ */
+struct __pyx_t_12mnist_reader_mystruct {
+  std::vector<std::vector<uint8_t> >  training_images;
+  std::vector<std::vector<uint8_t> >  test_images;
+  std::vector<uint8_t>  training_labels;
+  std::vector<uint8_t>  test_labels;
+};
 
 /* "mnist_reader.pyx":6
  * 
@@ -1080,10 +1094,6 @@ static int __Pyx_check_binary_version(void);
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 
-/* Module declarations from 'libcpp' */
-
-/* Module declarations from 'libcpp.memory' */
-
 /* Module declarations from 'libcpp.vector' */
 
 /* Module declarations from 'libc.stdint' */
@@ -1239,6 +1249,7 @@ static PyObject *__pyx_pf_12mnist_reader_13PyMnistReader_2display(struct __pyx_o
  * 
  *     def display_pretty(self):             # <<<<<<<<<<<<<<
  *         self.ptr.displayPretty()
+ * 
  */
 
 /* Python wrapper */
@@ -1263,6 +1274,8 @@ static PyObject *__pyx_pf_12mnist_reader_13PyMnistReader_4display_pretty(struct 
  * 
  *     def display_pretty(self):
  *         self.ptr.displayPretty()             # <<<<<<<<<<<<<<
+ * 
+ *     #def read_dataset(self):
  */
   __pyx_v_self->ptr->displayPretty();
 
@@ -1271,6 +1284,7 @@ static PyObject *__pyx_pf_12mnist_reader_13PyMnistReader_4display_pretty(struct 
  * 
  *     def display_pretty(self):             # <<<<<<<<<<<<<<
  *         self.ptr.displayPretty()
+ * 
  */
 
   /* function exit code */

@@ -19,3 +19,5 @@ import mnist_reader as mnist
 # print(mnist_lib.get_dataset()['test_labels'])
 reader = mnist.PyMnistReader()
 reader.display()
+reader.display_pretty()
+#print(type(reader.read_dataset())) # ['test_labels']

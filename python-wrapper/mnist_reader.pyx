@@ -16,3 +16,6 @@ cdef class PyMnistReader():
 
     def display_pretty(self):
         self.ptr.displayPretty()
+
+    #def read_dataset(self):
+        #return self.ptr.readDataset()
