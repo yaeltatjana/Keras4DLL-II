@@ -1,9 +1,9 @@
 # distutils: language = c++
 # distutils: sources = ../dll/release/lib/libdll_mnist_mylib.so
-from mnist_reader cimport *
+from src.MnistReader.mnist_reader cimport *
 
 #
-cdef class PyMnistReader():
+cdef class PyMnistReader:
     # Create instance of MnistReader
     cdef MnistReader *ptr
 
