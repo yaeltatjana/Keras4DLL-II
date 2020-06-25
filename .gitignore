@@ -1,6 +1,6 @@
 # Ignore generated .cpp files and build directory
-python-wrapper/wrapper.cpp
 python-wrapper/build
+python-wrapper/*.cpp
 python-wrapper/src/*.cpp
 python-wrapper/src/*/*.cpp
 
