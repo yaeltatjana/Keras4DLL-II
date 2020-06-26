@@ -1,4 +1,3 @@
-import wrapperlibmnist as dll
 import mnist_reader as mnist
 
 # Execute simple example
@@ -16,8 +15,7 @@ import mnist_reader as mnist
 # print(mnist_lib.get_dataset()['training_images'][0])
 
 # Print test labels
-# print(mnist_lib.get_dataset()['test_labels'])
 reader = mnist.PyMnistReader()
 reader.display()
 reader.display_pretty()
-#print(type(reader.read_dataset())) # ['test_labels']
+print(reader.read_dataset()['test_labels'][:10])
