@@ -1,21 +1,45 @@
-import mnist_reader as mnist
+import dll as dll
 
-# Execute simple example
-# dll.do_simple_example()
+def test_DDNet():
+    print("==========================================================================")
+    net = dll.PyDenseDenseNet()
+    net.display()
+    net.setLayerSize(0,28*28,16)
+    net.setLayerSize(1,16,10)
+    net.display()
+    print("==========================================================================")
 
-# Createt instance of PyMnistLib
-# mnist_lib = dll.PyMnistLib()
-# mnist_lib.create_net(28 * 28, 32, 0.001)
-# mnist_lib.display_net()
-# mnist_lib.display_dataset()
-# mnist_lib.train(5)
-# mnist_lib.evaluate()
+    input = [28*28, 16]
+    output = [16, 10]
+    net2 = dll.PyDenseDenseNet(input, output)
+    net2.display()
+    net2.setInitialMomentum(0.85)
 
-# Print first sample of training datas
-# print(mnist_lib.get_dataset()['training_images'][0])
+    reader2 = dll.PyMnistReader()
+    reader2.display()
+    net2.fineTune(reader2,5)
+    net2.evaluate(reader2)
 
 # Print test labels
 reader = mnist.PyMnistReader()
 reader.display()
 reader.display_pretty()
 print(reader.read_dataset()['test_labels'][:10])
+def test_DDDNet():
+    print("==========================================================================")
+    input = [28*28, 16, 16]
+    output = [16, 16, 10]
+    net2 = dll.PyDenseDenseDenseNet(input, output)
+    net2.display()
+    net2.setInitialMomentum(0.85)
+
+    reader2 = dll.PyMnistReader()
+    reader2.display()
+    net2.fineTune(reader2,5)
+    net2.evaluate(reader2)
+    net2.store_weights("stored_ddd.txt")
+
+
+
+test_DDNet()
+test_DDDNet()
