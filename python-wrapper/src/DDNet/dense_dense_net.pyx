@@ -1,32 +1,10 @@
-# distutils: sources = ../dll/release/lib/libdll_mnist_mylib.so
 from libcpp.vector cimport vector
-#cimport src.MnistReader.mnist_reader as mr
-#import src.MnistReader.mnist_reader as mr
 from src.DDNet.dense_dense_net cimport *
 from cython.operator cimport dereference as deref
-
-#cdef class PyMnistReader():
-    # Create instance of MnistReader
-    #cdef MnistReader *ptr
-
-    # Constructor
-    #def __cinit__(self):
-     #   self.ptr = new MnistReader()
-
-    #def display(self):
-    #    self.ptr.display()
-
-    #def display_pretty(self):
-     #   self.ptr.displayPretty()
-
 
 cdef class PyDenseDenseNet:
     # Create instance of DenseDenseNet
     cdef DenseDenseNet *ptr
-
-    # Constructor
-    #def __cinit__(self):
-        #self.ptr = new DenseDenseNet()
 
     # Constructor
     def __cinit__(self, vector[size_t]& nb_input = vector[size_t](), vector[size_t]& nb_output = vector[size_t]()):
@@ -55,8 +33,3 @@ cdef class PyDenseDenseNet:
 
     def evaluate(self, PyMnistReader ds):
         self.ptr.evaluate(deref(ds.ptr))
-
-    def all(self):
-        self.ptr.all()
-
-

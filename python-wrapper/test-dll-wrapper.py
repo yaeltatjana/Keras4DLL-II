@@ -1,5 +1,11 @@
 import dll as dll
 
+def test_reader():
+    reader = dll.PyMnistReader()
+    reader.display()
+    reader.display_pretty()
+    print(reader.read_dataset()['test_labels'][:10])
+
 def test_DDNet():
     print("==========================================================================")
     net = dll.PyDenseDenseNet()
@@ -20,11 +26,7 @@ def test_DDNet():
     net2.fineTune(reader2,5)
     net2.evaluate(reader2)
 
-# Print test labels
-reader = mnist.PyMnistReader()
-reader.display()
-reader.display_pretty()
-print(reader.read_dataset()['test_labels'][:10])
+
 def test_DDDNet():
     print("==========================================================================")
     input = [28*28, 16, 16]
@@ -40,6 +42,6 @@ def test_DDDNet():
     net2.store_weights("stored_ddd.txt")
 
 
-
+test_reader()
 test_DDNet()
 test_DDDNet()
