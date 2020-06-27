@@ -6,6 +6,11 @@ def test_reader():
     reader.display_pretty()
     print(reader.read_dataset()['test_labels'][:10])
 
+def test_3d_reader():
+    rd = dll.PyMnist3DReader()
+    print(rd.read_training_images()[22])
+    print(rd.read_training_labels()[22])
+
 def test_DDNet():
     print("==========================================================================")
     net = dll.PyDenseDenseNet()
@@ -42,6 +47,7 @@ def test_DDDNet():
     net2.store_weights("stored_ddd.txt")
 
 
-test_reader()
-test_DDNet()
-test_DDDNet()
+#test_reader()
+test_3d_reader()
+#test_DDNet()
+#test_DDDNet()
