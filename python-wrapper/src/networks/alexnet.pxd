@@ -1,10 +1,10 @@
 from libcpp.string cimport string
-from src.MnistReader.mnist_reader cimport *
+from src.datasets.mnist_reader cimport *
 
-cdef extern from "../../dll/python-wrapper-lib/LeNet.h":
+cdef extern from "../../dll/python-wrapper-lib/AlexNet.h":
     # Class for getting dataset
-    cdef cppclass LeNet:
-        LeNet()
+    cdef cppclass AlexNet:
+        AlexNet()
 
         void display()
 

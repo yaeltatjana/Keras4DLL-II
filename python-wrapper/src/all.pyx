@@ -1,9 +1,10 @@
 #cython: language_level=3
 
-include "./DDNet/dense_dense_net.pyx"
-include "./DDDNet/dense_dense_dense_net.pyx"
-include "./MnistReader/mnist_reader.pyx"
-include "./MnistReader/mnist_3d_reader.pyx"
-include "./LeNet/lenet.pyx"
-include "./AlexNet/alexnet.pyx"
+include "./datasets/mnist_reader.pyx"
+include "./datasets/mnist_3d_reader.pyx"
+
+include "./networks/dense_dense_net.pyx"
+include "./networks/dense_dense_dense_net.pyx"
+include "./networks/lenet.pyx"
+include "./networks/alexnet.pyx"
 

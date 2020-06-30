@@ -1,5 +1,5 @@
 from libcpp.vector cimport vector
-from src.DDNet.dense_dense_net cimport *
+from src.networks.dense_dense_net cimport *
 from cython.operator cimport dereference as deref
 
 cdef class PyDenseDenseNet:

@@ -1,13 +1,13 @@
-from src.LeNet.lenet cimport *
+from src.networks.alexnet cimport *
 from cython.operator cimport dereference as deref
 
-cdef class PyLeNet:
+cdef class PyAlexNet:
     # Create instance of DenseDenseNet
-    cdef LeNet *ptr
+    cdef AlexNet *ptr
 
     # Constructor
     def __cinit__(self):
-        self.ptr = new LeNet()
+        self.ptr = new AlexNet()
 
     def display(self):
         self.ptr.display()

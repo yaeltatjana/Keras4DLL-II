@@ -1,4 +1,4 @@
-from src.MnistReader.mnist_3d_reader cimport *
+from src.datasets.mnist_3d_reader cimport *
 
 cdef class PyMnist3DReader:
     # Create instance of MnistReader

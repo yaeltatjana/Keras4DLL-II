@@ -1,6 +1,6 @@
 from libcpp.vector cimport vector
 from libcpp.string cimport string
-from src.MnistReader.mnist_reader cimport *
+from src.datasets.mnist_reader cimport *
 
 cdef extern from "../../dll/python-wrapper-lib/DenseDenseNet.h":
     # Class for getting dataset
