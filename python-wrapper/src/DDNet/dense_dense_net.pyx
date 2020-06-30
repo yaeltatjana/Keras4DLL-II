@@ -33,3 +33,9 @@ cdef class PyDenseDenseNet:
 
     def evaluate(self, PyMnistReader ds):
         self.ptr.evaluate(deref(ds.ptr))
+
+    def store_weights(self, str file):
+        self.ptr.storeWeights(file.encode('utf-8'))
+
+    def load_weights(self, str file):
+        self.ptr.loadWeights(file.encode('utf-8'))

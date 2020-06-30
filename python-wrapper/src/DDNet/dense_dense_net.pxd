@@ -1,4 +1,5 @@
 from libcpp.vector cimport vector
+from libcpp.string cimport string
 from src.MnistReader.mnist_reader cimport *
 
 cdef extern from "../../dll/python-wrapper-lib/DenseDenseNet.h":
@@ -21,3 +22,7 @@ cdef extern from "../../dll/python-wrapper-lib/DenseDenseNet.h":
         float fineTune(MnistReader& ds, size_t epochs)
 
         void evaluate(MnistReader& ds)
+
+        void storeWeights(string &file)
+
+        void loadWeights(string &file)
