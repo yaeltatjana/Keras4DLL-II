@@ -86,6 +86,44 @@ def test_alexnet():
     net.fine_tune(r,5)
     net.evaluate(r)
 
+# TODO: change values, random ones actually
+def test_vggnet():
+    print("==========================================================================")
+    n = dll.PyVGGNet()
+    n.set_conv_layer(0, 1, 28, 28, 12, 5, 5)
+    n.set_conv_layer(1, 1, 28, 28, 12, 5, 5)
+    n.set_mp_layer(2, 12, 24, 24, 2, 2)
+
+    n.set_conv_layer(3, 12, 12, 12, 12, 3, 3)
+    n.set_conv_layer(4, 12, 12, 12, 12, 3, 3)
+    n.set_mp_layer(5, 12, 10, 10, 2, 2)
+
+    n.set_conv_layer(6, 12, 5, 5, 12, 1, 1)
+    n.set_conv_layer(7, 12, 5, 5, 12, 1, 1)
+    n.set_conv_layer(8, 12, 5, 5, 12, 2, 2)
+    n.set_mp_layer(9, 12, 4, 4, 2, 2)
+
+    n.set_conv_layer(10, 12, 5, 5, 12, 1, 1)
+    n.set_conv_layer(11, 12, 5, 5, 12, 1, 1)
+    n.set_conv_layer(12, 12, 5, 5, 12, 2, 2)
+    n.set_mp_layer(13, 12, 4, 4, 2, 2)
+
+    n.set_conv_layer(14, 12, 5, 5, 12, 1, 1)
+    n.set_conv_layer(15, 12, 5, 5, 12, 1, 1)
+    n.set_conv_layer(16, 12, 5, 5, 12, 2, 2)
+    n.set_mp_layer(17, 12, 4, 4, 2, 2)
+
+    n.set_dense_layer(18, 12 * 2 * 2, 32)
+    n.set_dense_layer(19, 12 * 2 * 2, 32)
+    n.set_dense_layer(20, 32, 10)
+    n.display()
+
+    r = dll.PyMnistReader()
+    n.fine_tune(r,5)
+    n.evaluate(r)
+
+
+
 
 
 #test_reader()
@@ -93,4 +131,5 @@ def test_alexnet():
 #test_DDNet()
 #test_DDDNet()
 #test_lenet()
-test_alexnet()
+# test_alexnet()
+test_vggnet()
