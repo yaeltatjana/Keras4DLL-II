@@ -1,8 +1,7 @@
 from libcpp.string cimport string
 from src.datasets.mnist_reader cimport *
 
-cdef extern from "../../dll/python-wrapper-lib/AlexNet.h":
-    # Class for getting dataset
+cdef extern from "../../dll/python-wrapper-lib/networks/AlexNet.h":
     cdef cppclass AlexNet:
         AlexNet()
 

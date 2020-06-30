@@ -7,4 +7,5 @@ include "./networks/dense_dense_net.pyx"
 include "./networks/dense_dense_dense_net.pyx"
 include "./networks/lenet.pyx"
 include "./networks/alexnet.pyx"
+include "./networks/vggnet.pyx"
 

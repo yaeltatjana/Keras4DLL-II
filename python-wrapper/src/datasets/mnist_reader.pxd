@@ -3,7 +3,7 @@ from libc.stdint cimport uint8_t
 from libcpp.string cimport string
 
 
-cdef extern from "../../dll/python-wrapper-lib/MnistReader.h":
+cdef extern from "../../dll/python-wrapper-lib/datasets/MnistReader.h":
     cdef struct MnistDataset:
         vector[vector[uint8_t]] training_images
         vector[vector[uint8_t]] test_images

@@ -1,8 +1,7 @@
 from libcpp.string cimport string
 from src.datasets.mnist_reader cimport *
 
-cdef extern from "../../dll/python-wrapper-lib/LeNet.h":
-    # Class for getting dataset
+cdef extern from "../../dll/python-wrapper-lib/networks/LeNet.h":
     cdef cppclass LeNet:
         LeNet()
 

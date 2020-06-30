@@ -1,7 +1,7 @@
 from libcpp.vector cimport vector
 from libc.stdint cimport uint8_t
 
-cdef extern from "../../dll/python-wrapper-lib/Mnist3DReader.h":
+cdef extern from "../../dll/python-wrapper-lib/datasets/Mnist3DReader.h":
     # Class for getting dataset
     cdef cppclass Mnist3DReader:
         Mnist3DReader()

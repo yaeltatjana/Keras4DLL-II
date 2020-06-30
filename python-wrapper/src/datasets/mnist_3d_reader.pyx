@@ -1,7 +1,7 @@
 from src.datasets.mnist_3d_reader cimport *
 
 cdef class PyMnist3DReader:
-    # Create instance of MnistReader
+    # Create instance of Mnist3DReader
     cdef Mnist3DReader *ptr
 
     # Constructor

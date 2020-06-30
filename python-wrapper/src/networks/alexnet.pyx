@@ -2,7 +2,7 @@ from src.networks.alexnet cimport *
 from cython.operator cimport dereference as deref
 
 cdef class PyAlexNet:
-    # Create instance of DenseDenseNet
+    # Create instance of AlexNet
     cdef AlexNet *ptr
 
     # Constructor

@@ -2,7 +2,7 @@ from src.networks.lenet cimport *
 from cython.operator cimport dereference as deref
 
 cdef class PyLeNet:
-    # Create instance of DenseDenseNet
+    # Create instance of LeNet
     cdef LeNet *ptr
 
     # Constructor

@@ -3,8 +3,7 @@ from libcpp.string cimport string
 from src.datasets.mnist_reader cimport *
 
 # path is the one from src/all.pyx as it import this file after
-cdef extern from "../../dll/python-wrapper-lib/DenseDenseDenseNet.h":
-    # Class for getting dataset
+cdef extern from "../../dll/python-wrapper-lib/networks/DenseDenseDenseNet.h":
     cdef cppclass DenseDenseDenseNet:
         DenseDenseDenseNet()
 
