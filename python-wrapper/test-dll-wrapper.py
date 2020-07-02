@@ -122,14 +122,16 @@ def test_vggnet():
     n.fine_tune(r,5)
     n.evaluate(r)
 
-
-
+def test_text_reader():
+    r = dll.PyTextReader("../dll/test/text_db/images", "../dll/test/text_db/labels")
+    print(r.read_labels()[0])
 
 
 #test_reader()
 #test_3d_reader()
 #test_DDNet()
 #test_DDDNet()
-#test_lenet()
-# test_alexnet()
-test_vggnet()
+# test_lenet()
+#test_alexnet()
+# test_vggnet()
+test_text_reader()
