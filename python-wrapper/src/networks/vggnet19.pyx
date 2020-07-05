@@ -15,14 +15,14 @@ cdef class PyVGGNet:
     def display_pretty(self):
         self.ptr.displayPretty()
 
-    def set_conv_layer(self, size_t layer, size_t inputChannels, size_t firstDim, size_t secDim, size_t nbFilters, size_t firstDimFilter, size_t secDimFilter):
-        self.ptr.setConvLayer(layer, inputChannels, firstDim, secDim, nbFilters, firstDimFilter, secDimFilter)
+    def set_conv_layer(self, size_t layer, size_t channels, size_t dim1, size_t dim2, size_t nb_filters, size_t filt1, size_t filt2):
+        self.ptr.setConvLayer(layer, channels, dim1, dim2, nb_filters, filt1, filt2)
 
-    def set_mp_layer(self, size_t layer, size_t inputChannels, size_t firstDim, size_t secDim, size_t firstDimPoolSize, size_t secDimPoolSize):
-        self.ptr.setMPLayer(layer, inputChannels, firstDim, secDim, firstDimPoolSize, secDimPoolSize)
+    def set_mp_layer(self, size_t layer, size_t channels, size_t dim1, size_t dim2, size_t pool1, size_t pool2):
+        self.ptr.setMPLayer(layer, channels, dim1, dim2, pool1, pool2)
 
-    def set_dense_layer(self, size_t layer, size_t inputSize, size_t outputSize):
-        self.ptr.setDenseLayer(layer, inputSize, outputSize)
+    def set_dense_layer(self, size_t layer, size_t input_size, size_t output_size):
+        self.ptr.setDenseLayer(layer, input_size, output_size)
 
     def set_learning_rate(self, double rate):
         self.ptr.setLearningRate(rate)
