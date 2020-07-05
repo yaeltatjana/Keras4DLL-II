@@ -10,7 +10,7 @@ def benchmark(name):
         def decorated_func(file, loops, *args, **kwargs):
             arr = np.array(func(loops, *args, **kwargs))
             out = "======================= [ {name} - {func} ] =======================\n"
-            out += "Average: {avg:.4f} seconds\nMax: {max:.4f} seconds\nMin: {min:.4f} seconds"
+            out += "Average: {avg:.4f} seconds\nMax: {max:.4f} seconds\nMin: {min:.4f} seconds\n"
             out_formatted = out.format(name=name, func=func.__name__, avg=np.sum(arr) / loops, max=np.max(arr), min=np.min(arr))
             if file is None:
                 print(out_formatted)
