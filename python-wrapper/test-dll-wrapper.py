@@ -1,26 +1,29 @@
 import dll as dll
 
+
 def test_reader():
     reader = dll.PyMnistReader()
     reader.display()
     reader.display_pretty()
     print(reader.read_dataset()['test_labels'][:10])
 
+
 def test_3d_reader():
     rd = dll.PyMnist3DReader()
     print(rd.read_training_images()[22])
     print(rd.read_training_labels()[22])
 
+
 def test_DDNet():
     print("==========================================================================")
     net = dll.PyDenseDenseNet()
     net.display()
-    net.setLayerSize(0,28*28,16)
-    net.setLayerSize(1,16,10)
+    net.setLayerSize(0, 28 * 28, 16)
+    net.setLayerSize(1, 16, 10)
     net.display()
     print("==========================================================================")
 
-    input = [28*28, 16]
+    input = [28 * 28, 16]
     output = [16, 10]
     net2 = dll.PyDenseDenseNet(input, output)
     net2.display()
@@ -28,13 +31,13 @@ def test_DDNet():
 
     reader2 = dll.PyMnistReader()
     reader2.display()
-    net2.fineTune(reader2,5)
+    net2.fineTune(reader2, 5)
     net2.evaluate(reader2)
 
 
 def test_DDDNet():
     print("==========================================================================")
-    input = [28*28, 16, 16]
+    input = [28 * 28, 16, 16]
     output = [16, 16, 10]
     net2 = dll.PyDenseDenseDenseNet(input, output)
     net2.display()
@@ -42,9 +45,10 @@ def test_DDDNet():
 
     reader2 = dll.PyMnistReader()
     reader2.display()
-    net2.fineTune(reader2,5)
+    net2.fineTune(reader2, 5)
     net2.evaluate(reader2)
     net2.store_weights("stored_ddd.txt")
+
 
 def test_lenet():
     print("==========================================================================")
@@ -60,7 +64,7 @@ def test_lenet():
 
     net.display()
     r = dll.PyMnistReader()
-    net.fine_tune(r,5)
+    net.fine_tune(r, 5)
     net.evaluate(r)
 
 
@@ -83,13 +87,14 @@ def test_alexnet():
 
     net.display()
     r = dll.PyMnistReader()
-    net.fine_tune(r,5)
+    net.fine_tune(r, 5)
     net.evaluate(r)
 
+
 # TODO: change values, random ones actually
-def test_vggnet():
+def test_vggnet19():
     print("==========================================================================")
-    n = dll.PyVGGNet()
+    n = dll.PyVGGNet19()
     n.set_conv_layer(0, 1, 28, 28, 12, 5, 5)
     n.set_conv_layer(1, 1, 28, 28, 12, 5, 5)
     n.set_mp_layer(2, 12, 24, 24, 2, 2)
@@ -119,19 +124,23 @@ def test_vggnet():
     n.display()
 
     r = dll.PyMnistReader()
-    n.fine_tune(r,5)
+    n.fine_tune(r, 5)
     n.evaluate(r)
+
 
 def test_text_reader():
     r = dll.PyTextReader("../dll/test/text_db/images", "../dll/test/text_db/labels")
     print(r.read_labels()[0])
 
 
-#test_reader()
-#test_3d_reader()
-#test_DDNet()
-#test_DDDNet()
+# def testingBench(benchmark):
+#    benchmark(test_text_reader)
+
+# test_reader()
+# test_3d_reader()
+# test_DDNet()
+# test_DDDNet()
 # test_lenet()
-#test_alexnet()
-# test_vggnet()
+# test_alexnet()
+# test_vggnet19()
 test_text_reader()

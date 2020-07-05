@@ -2,8 +2,8 @@ from libcpp.string cimport string
 from src.datasets.mnist_reader cimport *
 
 cdef extern from "../../dll/python-wrapper-lib/networks/VGGNet19.h":
-    cdef cppclass VGGNet:
-        VGGNet()
+    cdef cppclass VGGNet19:
+        VGGNet19()
 
         void display()
 

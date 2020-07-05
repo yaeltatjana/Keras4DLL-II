@@ -4,8 +4,8 @@ cdef class PyTextReader:
     cdef TextReader *ptr
 
     # Constructor
-    def __cinit__(self, str imgPath, str lblPath, size_t imgLimit = 0, size_t lblLimit = 0):
-        self.ptr = new TextReader(imgPath.encode('utf-8'), lblPath.encode('utf-8'), imgLimit, lblLimit)
+    def __cinit__(self, str img_path, str lbl_path, size_t img_limit = 0, size_t lbl_lLimit = 0):
+        self.ptr = new TextReader(img_path.encode('utf-8'), lbl_path.encode('utf-8'), img_limit, lbl_lLimit)
 
     def read_images(self):
         return self.ptr.readImages()

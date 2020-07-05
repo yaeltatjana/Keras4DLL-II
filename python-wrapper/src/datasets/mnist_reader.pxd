@@ -1,6 +1,5 @@
 from libcpp.vector cimport vector
 from libc.stdint cimport uint8_t
-from libcpp.string cimport string
 
 
 cdef extern from "../../dll/python-wrapper-lib/datasets/MnistReader.h":

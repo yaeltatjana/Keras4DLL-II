@@ -3,6 +3,8 @@ python-wrapper/build
 python-wrapper/*.cpp
 python-wrapper/src/*.cpp
 python-wrapper/src/*/*.cpp
+python-wrapper/__pycache__
+python-wrapper/benchmark/__pycache__
 
 # Ignore copied mnist file for launching example
 python-wrapper/mnist
