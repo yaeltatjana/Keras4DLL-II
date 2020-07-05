@@ -17,13 +17,13 @@ cdef class PyDenseDenseDenseNet:
         else:
             self.ptr = new DenseDenseDenseNet(nb_input, nb_output)
 
-    def setLearningRate(self, double l_rate):
+    def set_learning_rate(self, double l_rate):
         self.ptr.setLearningRate(l_rate)
 
-    def setLayerSize(self, size_t layer, size_t input_size, size_t output_size):
+    def set_layer_size(self, size_t layer, size_t input_size, size_t output_size):
         self.ptr.setLayerSize(layer, input_size, output_size)
 
-    def setInitialMomentum(self, double m):
+    def set_initial_momentum(self, double m):
         self.ptr.setInitialMomentum(m)
 
     def display(self):
@@ -32,7 +32,7 @@ cdef class PyDenseDenseDenseNet:
     def display_pretty(self):
         self.ptr.displayPretty()
 
-    def fineTune(self, PyMnistReader ds, size_t epochs):
+    def fine_tune(self, PyMnistReader ds, size_t epochs):
         self.ptr.fineTune(deref(ds.ptr), epochs)
 
     def evaluate(self, PyMnistReader ds):

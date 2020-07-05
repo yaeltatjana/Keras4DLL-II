@@ -5,6 +5,8 @@ python-wrapper/src/*.cpp
 python-wrapper/src/*/*.cpp
 python-wrapper/__pycache__
 python-wrapper/benchmark/__pycache__
+python-wrapper/out
+python-wrapper/*.txt
 
 # Ignore copied mnist file for launching example
 python-wrapper/mnist
