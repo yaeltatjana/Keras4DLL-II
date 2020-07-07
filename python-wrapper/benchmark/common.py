@@ -2,8 +2,8 @@ import dll
 import numpy as np
 import time
 
-default_epochs = 6
-
+default_epochs = 25
+# TODO: remove the default and add parameter of function
 
 def benchmark(name):
     def benchmark_func(func):

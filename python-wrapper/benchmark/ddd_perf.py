@@ -9,7 +9,7 @@ def perf_init1(loops):
     for x in range(0, loops):
         start = time.time()
 
-        net = dll.PyDenseDenseDenseNet([28 * 28, 16, 16], [16, 16, 10])
+        net = dll.PyDenseDenseDenseNet([28 * 28, 32, 16], [32, 16, 10])
         net.set_initial_momentum(0.85)
 
         end = time.time()
@@ -24,9 +24,8 @@ def perf_init2(loops):
         start = time.time()
 
         net = dll.PyDenseDenseDenseNet()
-        net.display()
-        net.set_layer_size(0, 28 * 28, 16)
-        net.set_layer_size(1, 16, 16)
+        net.set_layer_size(0, 28 * 28, 32)
+        net.set_layer_size(1, 32, 16)
         net.set_layer_size(2, 16, 10)
         net.set_initial_momentum(0.85)
 
@@ -63,9 +62,8 @@ def perf_all(loops, reader, epochs):
         start = time.time()
 
         net = dll.PyDenseDenseDenseNet()
-        net.display()
-        net.set_layer_size(0, 28 * 28, 16)
-        net.set_layer_size(1, 16, 16)
+        net.set_layer_size(0, 28 * 28, 32)
+        net.set_layer_size(1, 32, 16)
         net.set_layer_size(2, 16, 10)
         net.set_initial_momentum(0.85)
 
@@ -80,8 +78,8 @@ def perf_all(loops, reader, epochs):
 
 def get_3xdense_net():
     net = dll.PyDenseDenseDenseNet()
-    net.set_layer_size(0, 28 * 28, 16)
-    net.set_layer_size(1, 16, 16)
+    net.set_layer_size(0, 28 * 28, 32)
+    net.set_layer_size(1, 32, 16)
     net.set_layer_size(2, 16, 10)
     net.set_initial_momentum(0.85)
     return net

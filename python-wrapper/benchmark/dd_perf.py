@@ -24,7 +24,6 @@ def perf_init2(loops):
         start = time.time()
 
         net = dll.PyDenseDenseNet()
-        net.display()
         net.set_layer_size(0, 28 * 28, 16)
         net.set_layer_size(1, 16, 10)
         net.set_initial_momentum(0.85)
@@ -62,7 +61,6 @@ def perf_all(loops, reader, epochs):
         start = time.time()
 
         net = dll.PyDenseDenseNet()
-        net.display()
         net.set_layer_size(0, 28 * 28, 16)
         net.set_layer_size(1, 16, 10)
         net.set_initial_momentum(0.85)
