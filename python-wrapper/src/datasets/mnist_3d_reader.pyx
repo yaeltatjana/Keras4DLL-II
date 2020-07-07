@@ -8,6 +8,9 @@ cdef class PyMnist3DReader:
     def __cinit__(self):
         self.ptr = new Mnist3DReader()
 
+    def __dealloc__(self):
+        del self.ptr
+
     def read_training_images(self):
         return self.ptr.readTrainingImages()
 

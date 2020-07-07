@@ -8,6 +8,9 @@ cdef class PyMnistReader:
     def __cinit__(self):
         self.ptr = new MnistReader()
 
+    def __dealloc__(self):
+        del self.ptr
+
     def read_dataset(self):
         return self.ptr.readDataset()
 

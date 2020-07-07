@@ -9,6 +9,9 @@ cdef class PyAlexNet:
     def __cinit__(self):
         self.ptr = new AlexNet()
 
+    def __dealloc__(self):
+        del self.ptr
+
     def display(self):
         self.ptr.display()
 

@@ -13,6 +13,9 @@ cdef class PyDenseDenseNet:
         else:
             self.ptr = new DenseDenseNet(nb_input, nb_output)
 
+    def __dealloc__(self):
+        del self.ptr
+
     def set_learning_rate(self, double l_rate):
         self.ptr.setLearningRate(l_rate)
 

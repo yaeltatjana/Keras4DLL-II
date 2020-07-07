@@ -9,6 +9,9 @@ cdef class PyLeNet:
     def __cinit__(self):
         self.ptr = new LeNet()
 
+    def __dealloc__(self):
+        del self.ptr
+
     def display(self):
         self.ptr.display()
 

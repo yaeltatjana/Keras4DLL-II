@@ -9,6 +9,9 @@ cdef class PyVGGNet19:
     def __cinit__(self):
         self.ptr = new VGGNet19()
 
+    def __dealloc__(self):
+        del self.ptr
+
     def display(self):
         self.ptr.display()
 
