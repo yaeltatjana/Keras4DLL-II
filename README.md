@@ -7,21 +7,31 @@ Pour cloner le projet avec les *submodules* :
 git clone --recursive -j8 https://github.com/yaeltatjana/Keras4DLL-II.git
 ```
 
-Pour lancer l'exemple simple avec DLL :
+Les dernières modifications sont actuellement sur les branches *dev*, tant pour [Keras4DLL-II](https://github.com/yaeltatjana/Keras4DLL-II/tree/dev) que pour [DLL](https://github.com/yaeltatjana/dll/tree/dev). Il faut donc changer de branche:
 ```
+git checkout dev
 cd dll
-make dll_mnist_simple_example
-cp -r mnist ./release/bin
-./release/bin/dll_mnist_simple_example
+git checkout dev
 ```
 
-Pour lancer le *wrapper* :
+Pour compiler la librairie DLL pour le *wrapper* :
 ```
 cd dll
-make create_shared_library 
-cd ../python-wrapper
-python setup.py install
+make release/lib/libdll_mnist_mylib.so
+```
+
+Pour compiler le *wrapper* (la librairie DLL doit être compilée d'abord) :
+```
+cd python-wrapper
+python setup.py install "path-to-so-lib"
 cp -r ../dll/mnist/ .
+python test-dll-wrapper.py 
+```
+
+Pour tester le *wrapper* :
+```
+cp -r dll/mnist/ dll
+cd python-wrapper
 python test-dll-wrapper.py 
 ```
 
