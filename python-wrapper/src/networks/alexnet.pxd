@@ -1,5 +1,6 @@
 from libcpp.string cimport string
 from src.datasets.mnist_reader cimport *
+from src.datasets.text_reader cimport *
 
 cdef extern from "../../dll/python-wrapper-lib/networks/AlexNet.h":
     cdef cppclass AlexNet:
@@ -24,6 +25,10 @@ cdef extern from "../../dll/python-wrapper-lib/networks/AlexNet.h":
         float fineTune(MnistReader& ds, size_t epochs)
 
         void evaluate(MnistReader& ds)
+
+        float fineTune(TextReader& ds, size_t epochs)
+
+        void evaluate(TextReader& ds)
 
         void storeWeights(string &file)
 

@@ -1,6 +1,7 @@
 from libcpp.vector cimport vector
 from libcpp.string cimport string
 from src.datasets.mnist_reader cimport *
+from src.datasets.text_reader cimport *
 
 # path is the one from src/all.pyx as it import this file after
 cdef extern from "../../dll/python-wrapper-lib/networks/DenseDenseDenseNet.h":
@@ -22,6 +23,10 @@ cdef extern from "../../dll/python-wrapper-lib/networks/DenseDenseDenseNet.h":
         float fineTune(MnistReader& ds, size_t epochs)
 
         void evaluate(MnistReader& ds)
+
+        float fineTune(TextReader& ds, size_t epochs)
+
+        void evaluate(TextReader& ds)
 
         void storeWeights(const string& file)
 

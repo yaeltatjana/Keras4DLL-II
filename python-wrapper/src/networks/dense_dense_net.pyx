@@ -31,10 +31,10 @@ cdef class PyDenseDenseNet:
     def display_pretty(self):
         self.ptr.displayPretty()
 
-    def fine_tune(self, PyMnistReader ds, size_t epochs):
+    def fine_tune(self, Reader ds, size_t epochs):
         self.ptr.fineTune(deref(ds.ptr), epochs)
 
-    def evaluate(self, PyMnistReader ds):
+    def evaluate(self, Reader ds):
         self.ptr.evaluate(deref(ds.ptr))
 
     def store_weights(self, str file):
