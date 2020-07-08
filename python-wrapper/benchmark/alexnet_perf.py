@@ -46,8 +46,8 @@ def perf_train(loops, epochs, net, reader):
 
 
 @benchmark("AlexNet")
-def perf_evaluate(loops, net, reader):
-    return perf_evaluate_generic(loops, net, reader)
+def perf_evaluate(loops, epochs, net, reader):
+    return perf_evaluate_generic(loops, epochs, net, reader)
 
 @benchmark("AlexNet")
 def perf_all(loops, reader, epochs):
@@ -93,7 +93,6 @@ def get_alexnet():
     net.set_conv_layer(5, 12, 5, 5, 12, 1, 1)
     net.set_conv_layer(6, 12, 5, 5, 12, 2, 2)
     net.set_mp_layer(7, 12, 4, 4, 2, 2)
-
     net.set_dense_layer(8, 12 * 2 * 2, 32)
     net.set_dense_layer(9, 32, 10)
 

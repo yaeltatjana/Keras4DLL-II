@@ -61,8 +61,8 @@ def perf_train(loops, epochs, net, reader):
 
 
 @benchmark("VGGNet19")
-def perf_evaluate(loops, net, reader):
-    return perf_evaluate_generic(loops, net, reader)
+def perf_evaluate(loops, epochs, net, reader):
+    return perf_evaluate_generic(loops, epochs, net, reader)
 
 @benchmark("VGGNet19")
 def perf_all(loops, reader, epochs):

@@ -2,9 +2,6 @@ import dll
 import numpy as np
 import time
 
-default_epochs = 25
-# TODO: remove the default and add parameter of function
-
 def benchmark(name):
     def benchmark_func(func):
         def decorated_func(file, loops, *args, **kwargs):
@@ -52,8 +49,8 @@ def perf_train_generic(loops, epochs, net, reader):
     return t
 
 
-def perf_evaluate_generic(loops, net, reader):
-    net.fine_tune(reader, default_epochs)
+def perf_evaluate_generic(loops, epochs, net, reader):
+    net.fine_tune(reader, epochs)
 
     t = []
     for x in range(0, loops):
