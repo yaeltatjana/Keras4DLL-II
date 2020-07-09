@@ -119,5 +119,5 @@ class TestNets(unittest.TestCase):
 
         net.display()
         net.display_pretty()
-        self.assertLessEqual(net.fine_tune(reader, 5), 0.5)
+        self.assertLessEqual(net.fine_tune(reader, 5), 0.95)
         net.evaluate(reader)

@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 # you have to be in the dir python-wrapper
 if [ ! -d "test/out" ]
 then
