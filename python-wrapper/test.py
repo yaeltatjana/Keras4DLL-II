@@ -16,6 +16,7 @@ try:
 except OSError:
     print("Creation of the directory %s failed" % path_test)
 
+# usage of script
 if len(sys.argv) < 2:
     print("No test selected...\n"
           "Usage : python test.py test_name...\n"
@@ -27,8 +28,13 @@ if len(sys.argv) < 2:
           "                             mnist       MNIST dataset reader\n"
           "                             text        text dataset reader\n")
 
+# suite to add unittests
 suite = unittest.TestSuite()
+
+# existing dataset readers
 readers = ["mnist", "text"]
+
+# existing nets
 nets = ["dd", "ddd", "lenet", "alexnet", "vggnet19"]
 
 arg = sys.argv[1]
@@ -41,46 +47,6 @@ if arg in readers:
 if arg in nets:
     name = "test_" + arg
     suite.addTest(TestNets(name))
-
-
-#
-# if "mnist" in sys.argv:
-#     readers.test_mnist()
-#     sys.argv.remove("mnist")
-#     suite.addTest(readers.TestReaders('test_mnist'))
-#
-#
-# if "text" in sys.argv:
-#     # nothing to be printed
-#     sys.argv.remove("text")
-#     suite.addTest(TestReaders('test_text'))
-#
-#
-# if "dd" in sys.argv:
-#     nets.test_dd()
-#     sys.argv.remove("dd")
-#     suite.addTest(TestNets('test_dd'))
-#
-#
-# if "ddd" in sys.argv:
-#     nets.test_ddd()
-#     sys.argv.remove("ddd")
-#     suite.addTest(TestNets('test_ddd'))
-#
-# if "lenet" in sys.argv:
-#     nets.test_ddd()
-#     sys.argv.remove("lenet")
-#     suite.addTest(TestNets('lenet_ddd'))
-#
-# if "alexnet" in sys.argv:
-#     nets.test_ddd()
-#     sys.argv.remove("alexnet")
-#     suite.addTest(TestNets('alexnet_ddd'))
-#
-# if "vggnet19" in sys.argv:
-#     nets.test_ddd()
-#     sys.argv.remove("vggnet19")
-#     suite.addTest(TestNets('vggnet19_ddd'))
 
 
 if __name__ == "__main__":
