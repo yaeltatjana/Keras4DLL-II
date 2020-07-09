@@ -9,7 +9,8 @@ import benchmark.alexnet_perf as an
 import benchmark.vggnet19_perf as vgg
 
 # path where to store the files with the output
-path_benchmark = "../benchmark"
+path_benchmark = path.dirname(path.abspath(__file__)) + "/../benchmark/"
+prefix_file = "benchmark_py_"
 
 # Create directory if not existing
 try:
@@ -30,7 +31,7 @@ if len(sys.argv) < 2:
 
 # ========================= 2xDense =========================
 if "dd" in sys.argv:
-    file = open(path_benchmark + "benchmark_py_dd.txt", "w")
+    file = open(path_benchmark + prefix_file + "dd.txt", "w")
     dd.perf_init1(file, 10000)
     dd.perf_init2(file, 10000)
     dd.perf_display(file, 10000, dd.get_2xdense_net())
@@ -42,7 +43,7 @@ if "dd" in sys.argv:
 
 # ========================= 3xDense =========================
 if "ddd" in sys.argv:
-    file = open(path_benchmark + "benchmark_py_ddd.txt", "w")
+    file = open(path_benchmark + prefix_file + "ddd.txt", "w")
     ddd.perf_init1(file, 10000)
     ddd.perf_init2(file, 10000)
     net = ddd.get_3xdense_net()
@@ -55,29 +56,29 @@ if "ddd" in sys.argv:
 
 # ========================== LeNet ==========================
 if "lenet" in sys.argv:
-    file = open(path_benchmark + "benchmark_py_lenet.txt", "w")
-    ln.perf_init(10000)
-    ln.perf_display(10000, ln.get_lenet())
-    ln.perf_display_pretty(10000, ln.get_lenet())
-    ln.perf_train(50, 25, ln.get_lenet(), c.get_mnist_reader())
-    ln.perf_evaluate(50, 25, ln.get_lenet(), c.get_mnist_reader())
-    ln.perf_all(50, c.get_mnist_reader(), 25)
+    file = open(path_benchmark + prefix_file + "lenet.txt", "w")
+    ln.perf_init(file, 10000)
+    ln.perf_display(file, 10000, ln.get_lenet())
+    ln.perf_display_pretty(file, 10000, ln.get_lenet())
+    ln.perf_train(file, 50, 25, ln.get_lenet(), c.get_mnist_reader())
+    ln.perf_evaluate(file, 50, 25, ln.get_lenet(), c.get_mnist_reader())
+    ln.perf_all(file, 50, c.get_mnist_reader(), 25)
     file.close()
 
 # ========================= AlexNet =========================
 if "alexnet" in sys.argv:
-    file = open(path_benchmark + "benchmark_alexnet.txt", "w")
-    an.perf_init(10000)
-    an.perf_display(10000, an.get_alexnet())
-    an.perf_display_pretty(10000, an.get_alexnet())
-    an.perf_train(10, 15, an.get_alexnet(), c.get_mnist_reader())
-    an.perf_evaluate(10, 15, an.get_alexnet(), c.get_mnist_reader())
-    an.perf_all(10, c.get_mnist_reader(), 15)
+    file = open(path_benchmark + prefix_file + "alexnet.txt", "w")
+    an.perf_init(file, 10000)
+    an.perf_display(file, 10000, an.get_alexnet())
+    an.perf_display_pretty(file, 10000, an.get_alexnet())
+    an.perf_train(file, 10, 15, an.get_alexnet(), c.get_mnist_reader())
+    an.perf_evaluate(file, 10, 15, an.get_alexnet(), c.get_mnist_reader())
+    an.perf_all(file, 10, c.get_mnist_reader(), 15)
     file.close()
 
 # ========================= VGGNet19 =========================
 if "vggnet19" in sys.argv:
-    file = open(path_benchmark + "benchmark_py_vggnet19.txt", "w")
+    file = open(path_benchmark + prefix_file + "vggnet19.txt", "w")
     vgg.perf_init(file, 10000)
     vgg.perf_display(file, 10000, vgg.get_vggnet19())
     vgg.perf_display_pretty(file, 10000, vgg.get_vggnet19())

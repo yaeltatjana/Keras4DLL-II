@@ -15,23 +15,23 @@ def test_3d_reader():
 
 
 def test_DDNet():
-    print("==========================================================================")
-    net = dll.PyDenseDenseNet()
-    net.display()
-    net.setLayerSize(0, 28 * 28, 16)
-    net.setLayerSize(1, 16, 10)
-    net.display()
+    # print("==========================================================================")
+    # net = dll.PyDenseDenseNet()
+    # net.display()
+    # net.setLayerSize(0, 28 * 28, 16)
+    # net.setLayerSize(1, 16, 10)
+    # net.display()
     print("==========================================================================")
 
     input = [28 * 28, 16]
     output = [16, 10]
     net = dll.PyDenseDenseNet(input, output)
     net.display()
-    net.setInitialMomentum(0.85)
+    net.set_initial_momentum(0.85)
 
     reader2 = dll.PyMnistReader()
     reader2.display()
-    net.fineTune(reader2, 5)
+    net.fine_tune(reader2, 5)
     net.evaluate(reader2)
 
 
@@ -41,11 +41,11 @@ def test_DDDNet():
     output = [16, 16, 10]
     net = dll.PyDenseDenseDenseNet(input, output)
     net.display()
-    net.setInitialMomentum(0.85)
+    net.set_initial_momentum(0.85)
 
     reader2 = dll.PyMnistReader()
     reader2.display()
-    net.fineTune(reader2, 5)
+    net.fine_tune(reader2, 5)
     net.evaluate(reader2)
     net.store_weights("stored_ddd.txt")
 
@@ -64,7 +64,7 @@ def test_lenet():
 
     net.display()
     r = dll.PyMnistReader()
-    net.fine_tune(r, 5)
+    net.fine_tune(r, 2)
     net.evaluate(r)
 
 
@@ -133,18 +133,24 @@ def test_vggnet19():
 
 
 def test_text_reader():
-    r = dll.PyTextReader("../dll/test/text_db/images", "../dll/test/text_db/labels")
-    print(r.read_labels()[0])
+    reader = dll.PyTextReader("../dll/test/text_db/images", "../dll/test/text_db/labels")
+    print(reader.read_labels()[0])
 
+    input = [28 * 28, 16]
+    output = [16, 10]
+    net = dll.PyDenseDenseNet(input, output)
+    net.display()
+    net.set_initial_momentum(0.85)
 
-# def testingBench(benchmark):
-#    benchmark(test_text_reader)
+    net.fine_tune(reader, 5)
+    net.evaluate(reader)
+
 
 # test_reader()
 # test_3d_reader()
-# test_DDNet()
+test_DDNet()
 # test_DDDNet()
 # test_lenet()
 # test_alexnet()
-test_vggnet19()
-# test_text_reader()
+# test_vggnet19()
+test_text_reader()
