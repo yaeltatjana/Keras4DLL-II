@@ -37,7 +37,7 @@ cdef class PyAlexNet:
         self.ptr.setAdamBeta2(beta)
 
     def fine_tune(self, Reader ds, size_t epochs):
-        self.ptr.fineTune(deref(ds.ptr), epochs)
+        return self.ptr.fineTune(deref(ds.ptr), epochs)
 
     def evaluate(self, Reader ds):
         self.ptr.evaluate(deref(ds.ptr))
