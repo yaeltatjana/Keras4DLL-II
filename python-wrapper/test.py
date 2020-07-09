@@ -1,14 +1,12 @@
 import sys
 from os import mkdir, path
-import test.dataset_readers as readers
-import test.networks as nets
 from test.dataset_readers import *
 from test.networks import *
 import unittest
 
-
 # creates output directory in the test directory
-path_test = path.dirname(path.abspath(__file__)) + "/out/"
+path_test = path.dirname(path.abspath(__file__)) + "/test/out/"
+print(path.dirname(path.abspath(__file__)) + "/test/out/")
 
 # Create directory if not existing
 try:
@@ -29,26 +27,21 @@ if len(sys.argv) < 2:
           "                             mnist       MNIST dataset reader\n"
           "                             text        text dataset reader\n")
 
-
 suite = unittest.TestSuite()
 readers = ["mnist", "text"]
-nets = ["dd","ddd","lenet","alexnet","vggnet19"]
+nets = ["dd", "ddd", "lenet", "alexnet", "vggnet19"]
 
-for reader in readers:
-    if reader in sys.argv:
-        name = "test_" + reader
-        print("================ [ " + reader + " ]================\n")
+arg = sys.argv[1]
 
-        m = globals()[name]()
-        suite.addTest(TestReaders(name))
-        # func = getattr(m, name)
+if arg in readers:
+    name = "test_" + arg
+    suite.addTest(TestReaders(name))
 
-for net in nets:
-    if net in sys.argv:
-        name = "test_" + net
-        print("================ [ " + net + " ]================\n")
-        m = globals()[name]()
-        suite.addTest(TestNets(name))
+
+if arg in nets:
+    name = "test_" + arg
+    suite.addTest(TestNets(name))
+
 
 #
 # if "mnist" in sys.argv:
@@ -91,5 +84,5 @@ for net in nets:
 
 
 if __name__ == "__main__":
-    runner = unittest.TextTestRunner()
+    runner = unittest.TextTestRunner(verbosity=2)  # to see which unittest is executed
     runner.run(suite)
