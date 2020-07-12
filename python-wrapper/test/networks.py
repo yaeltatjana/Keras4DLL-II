@@ -84,8 +84,8 @@ class TestNets(unittest.TestCase):
         self.assertLessEqual(net.fine_tune(reader, 5), 0.95)
         net.evaluate(reader)
 
-    def test_vggnet19(self):
-        net = dll.PyVGGNet19()
+    def test_vggnet16(self):
+        net = dll.PyVGGNet16()
         net.set_conv_layer(0, 1, 28, 28, 12, 5, 5)
         net.set_conv_layer(1, 12, 24, 24, 12, 1, 1)
         net.set_mp_layer(2, 12, 24, 24, 2, 2)

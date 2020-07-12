@@ -1,13 +1,13 @@
-from src.networks.vggnet19 cimport *
+from src.networks.vggnet16 cimport *
 from cython.operator cimport dereference as deref
 
-cdef class PyVGGNet19:
+cdef class PyVGGNet16:
     # Create instance of VGGNet
-    cdef VGGNet19 *ptr
+    cdef VGGNet16 *ptr
 
     # Constructor
     def __cinit__(self):
-        self.ptr = new VGGNet19()
+        self.ptr = new VGGNet16()
 
     def __dealloc__(self):
         del self.ptr

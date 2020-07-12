@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-# you have to be in the dir python-wrapper
+# you have to be in the directory python-wrapper
 if [ ! -d "test/out" ]
 then
   mkdir "test/out"
@@ -15,4 +15,4 @@ python test.py dd > test/out/test_dd.txt
 python test.py ddd > test/out/test_ddd.txt
 python test.py lennet > test/out/test_lenet.txt
 python test.py alexnet > test/out/test_alexnet.txt
-python test.py vggnet19 > test/out/test_vggnet19.txt
+python test.py vggnet16 > test/out/test_vggnet16.txt

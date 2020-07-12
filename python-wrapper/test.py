@@ -6,7 +6,6 @@ import unittest
 
 # creates output directory in the test directory
 path_test = path.dirname(path.abspath(__file__)) + "/test/out/"
-print(path.dirname(path.abspath(__file__)) + "/test/out/")
 
 # Create directory if not existing
 try:
@@ -24,7 +23,7 @@ if len(sys.argv) < 2:
           "                             ddd         3x dense layers network\n"
           "                             lenet       network LeNet5\n"
           "                             alexnet     network AlexNet\n"
-          "                             vggnet19    network VGGNnet19\n"
+          "                             vggnet16    network VGGNnet16\n"
           "                             mnist       MNIST dataset reader\n"
           "                             text        text dataset reader\n")
 
@@ -35,7 +34,7 @@ suite = unittest.TestSuite()
 readers = ["mnist", "text"]
 
 # existing nets
-nets = ["dd", "ddd", "lenet", "alexnet", "vggnet19"]
+nets = ["dd", "ddd", "lenet", "alexnet", "vggnet16"]
 
 arg = sys.argv[1]
 

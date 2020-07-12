@@ -9,7 +9,7 @@ except:
 path = ''
 
 if len(sys.argv) < 2:
-    print('Stop, need lib path')
+    print('Stop, need library path')
     sys.exit(1)
 else:
     path = sys.argv[2]
@@ -18,17 +18,17 @@ else:
 
 # Setup configurations for compiling wrapper and python module
 setup(
-    name="lib-dll-mnist",
+    name="lib-dll",
     version="1.0",
     ext_modules=[
         Extension(
             name='dll',
             sources=['src/all.pyx'],
             language="c++",
-            libraries=['dll_mnist_mylib'],
+            libraries=['dll'],
             library_dirs=[path],
             runtime_library_dirs=[path],
         )
     ],
-    cmdclass={'build_ext': build_ext, },
+    cmdclass={'build_ext': build_ext}
 )

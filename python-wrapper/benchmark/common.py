@@ -2,6 +2,7 @@ import dll
 import numpy as np
 import time
 
+
 def benchmark(name):
     def benchmark_func(func):
         def decorated_func(file, loops, *args, **kwargs):

@@ -15,12 +15,6 @@ def test_3d_reader():
 
 
 def test_DDNet():
-    # print("==========================================================================")
-    # net = dll.PyDenseDenseNet()
-    # net.display()
-    # net.setLayerSize(0, 28 * 28, 16)
-    # net.setLayerSize(1, 16, 10)
-    # net.display()
     print("==========================================================================")
 
     input = [28 * 28, 16]
@@ -92,9 +86,9 @@ def test_alexnet():
 
 
 # TODO: change values, random ones actually
-def test_vggnet19():
+def test_vggnet16():
     print("==========================================================================")
-    net = dll.PyVGGNet19()
+    net = dll.PyVGGNet16()
     net.set_conv_layer(0, 1, 28, 28, 12, 5, 5)
     net.set_conv_layer(1, 12, 24, 24, 12, 1, 1)
     net.set_mp_layer(2, 12, 24, 24, 2, 2)
@@ -148,9 +142,9 @@ def test_text_reader():
 
 # test_reader()
 # test_3d_reader()
-test_DDNet()
+# test_DDNet()
 # test_DDDNet()
 # test_lenet()
 # test_alexnet()
-# test_vggnet19()
-test_text_reader()
+# test_vggnet16()
+# test_text_reader()

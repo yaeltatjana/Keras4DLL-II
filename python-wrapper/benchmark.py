@@ -6,7 +6,7 @@ import benchmark.dd_perf as dd
 import benchmark.ddd_perf as ddd
 import benchmark.lenet_perf as ln
 import benchmark.alexnet_perf as an
-import benchmark.vggnet19_perf as vgg
+import benchmark.vggnet16_perf as vgg
 
 # path where to store the files with the output
 path_benchmark = path.dirname(path.abspath(__file__)) + "/../benchmark/"
@@ -27,7 +27,7 @@ if len(sys.argv) < 2:
           "                             ddd         3x dense layers network\n"
           "                             lenet       network LeNet5\n"
           "                             alexnet     network AlexNet\n"
-          "                             vggnet19    network VGGNnet19\n")
+          "                             vggnet16    network VGGNnet16\n")
 
 # ========================= 2xDense =========================
 if "dd" in sys.argv:
@@ -67,7 +67,7 @@ if "lenet" in sys.argv:
 
 # ========================= AlexNet =========================
 if "alexnet" in sys.argv:
-    file = open(path_benchmark + prefix_file + "alexnet.txt", "w")
+    file = open(path_benchmark + prefix_file + "alexnet2.txt", "w")
     an.perf_init(file, 10000)
     an.perf_display(file, 10000, an.get_alexnet())
     an.perf_display_pretty(file, 10000, an.get_alexnet())
@@ -76,13 +76,13 @@ if "alexnet" in sys.argv:
     an.perf_all(file, 10, c.get_mnist_reader(), 15)
     file.close()
 
-# ========================= VGGNet19 =========================
-if "vggnet19" in sys.argv:
-    file = open(path_benchmark + prefix_file + "vggnet19.txt", "w")
+# ========================= VGGNet16 =========================
+if "vggnet16" in sys.argv:
+    file = open(path_benchmark + prefix_file + "vggnet16.txt", "w")
     vgg.perf_init(file, 10000)
-    vgg.perf_display(file, 10000, vgg.get_vggnet19())
-    vgg.perf_display_pretty(file, 10000, vgg.get_vggnet19())
-    vgg.perf_train(file, 10, 15, vgg.get_vggnet19(), c.get_mnist_reader())
-    vgg.perf_evaluate(file, 10, 15, vgg.get_vggnet19(), c.get_mnist_reader())
+    vgg.perf_display(file, 10000, vgg.get_vggnet16())
+    vgg.perf_display_pretty(file, 10000, vgg.get_vggnet16())
+    vgg.perf_train(file, 10, 15, vgg.get_vggnet16(), c.get_mnist_reader())
+    vgg.perf_evaluate(file, 10, 15, vgg.get_vggnet16(), c.get_mnist_reader())
     vgg.perf_all(file, 10, c.get_mnist_reader(), 15)
     file.close()

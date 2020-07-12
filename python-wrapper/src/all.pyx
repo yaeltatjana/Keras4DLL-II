@@ -1,9 +1,13 @@
 #cython: language_level=3
 
+
 # Be careful, order is important ! if you need a module, it has to be imported before
 
-# first import fused types
-include "common.pyx"
+# fused types for dataset readers
+ctypedef fused Reader:
+    PyMnistReader
+    PyTextReader
+
 
 # import datasets
 include "datasets/mnist_reader.pyx"
@@ -15,5 +19,5 @@ include "networks/dense_dense_net.pyx"
 include "networks/dense_dense_dense_net.pyx"
 include "networks/lenet.pyx"
 include "networks/alexnet.pyx"
-include "networks/vggnet19.pyx"
+include "networks/vggnet16.pyx"
 
