@@ -1,0 +1,30 @@
+======================= [ dbn_lenet - perf_init ] =======================
+Average: 0 ms
+Max: 4 ms
+Min: 0 ms
+
+======================= [ dbn_lenet - perf_display ] =======================
+Average: 0 ms
+Max: 0 ms
+Min: 0 ms
+
+======================= [ dbn_lenet - perf_display_pretty ] =======================
+Average: 0 ms
+Max: 0 ms
+Min: 0 ms
+
+======================= [ dbn_lenet - perf_train ] =======================
+Average: 248543 ms
+Max: 252736 ms
+Min: 243797 ms
+
+======================= [ dbn_lenet - perf_evaluate ] =======================
+Average: 335 ms
+Max: 350 ms
+Min: 325 ms
+
+======================= [ dbn_lenet - perf_all ] =======================
+Average: 245829 ms
+Max: 250623 ms
+Min: 243732 ms
+

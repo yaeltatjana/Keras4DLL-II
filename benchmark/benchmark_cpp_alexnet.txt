@@ -1,0 +1,30 @@
+======================= [ dbn_alexnet - perf_init ] =======================
+Average: 0 ms
+Max: 0 ms
+Min: 0 ms
+
+======================= [ dbn_alexnet - perf_display ] =======================
+Average: 0 ms
+Max: 1 ms
+Min: 0 ms
+
+======================= [ dbn_alexnet - perf_display_pretty ] =======================
+Average: 0 ms
+Max: 7 ms
+Min: 0 ms
+
+======================= [ dbn_alexnet - perf_train ] =======================
+Average: 250945 ms
+Max: 252667 ms
+Min: 250067 ms
+
+======================= [ dbn_alexnet - perf_evaluate ] =======================
+Average: 412 ms
+Max: 422 ms
+Min: 408 ms
+
+======================= [ dbn_alexnet - perf_all ] =======================
+Average: 252888 ms
+Max: 256095 ms
+Min: 251740 ms
+

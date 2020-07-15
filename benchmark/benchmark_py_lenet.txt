@@ -1,0 +1,29 @@
+======================= [ LeNet - perf_init ] =======================
+Average: 0.0011 seconds
+Max: 0.0022 seconds
+Min: 0.0010 seconds
+
+======================= [ LeNet - perf_display ] =======================
+Average: 0.0000 seconds
+Max: 0.0249 seconds
+Min: 0.0000 seconds
+
+======================= [ LeNet - perf_display_pretty ] =======================
+Average: 0.0001 seconds
+Max: 0.0349 seconds
+Min: 0.0000 seconds
+
+======================= [ LeNet - perf_train ] =======================
+Average: 236.5782 seconds
+Max: 246.5988 seconds
+Min: 235.8111 seconds
+
+======================= [ LeNet - perf_evaluate ] =======================
+Average: 0.3086 seconds
+Max: 0.3248 seconds
+Min: 0.3033 seconds
+
+======================= [ LeNet - perf_all ] =======================
+Average: 246.3124 seconds
+Max: 248.8890 seconds
+Min: 243.0048 seconds

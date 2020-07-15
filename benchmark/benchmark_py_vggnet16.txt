@@ -1,0 +1,29 @@
+======================= [ VGGNet16 - perf_init ] =======================
+Average: 0.0004 seconds
+Max: 0.0012 seconds
+Min: 0.0003 seconds
+
+======================= [ VGGNet16 - perf_display ] =======================
+Average: 0.0001 seconds
+Max: 0.0283 seconds
+Min: 0.0000 seconds
+
+======================= [ VGGNet16 - perf_display_pretty ] =======================
+Average: 0.0002 seconds
+Max: 0.0343 seconds
+Min: 0.0001 seconds
+
+======================= [ VGGNet16 - perf_train ] =======================
+Average: 1261.5978 seconds
+Max: 1264.8060 seconds
+Min: 1258.7453 seconds
+
+======================= [ VGGNet16 - perf_evaluate ] =======================
+Average: 1.2125 seconds
+Max: 1.2261 seconds
+Min: 1.2052 seconds
+
+======================= [ VGGNet16 - perf_all ] =======================
+Average: 1270.5015 seconds
+Max: 1276.3156 seconds
+Min: 1266.3925 seconds

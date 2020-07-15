@@ -6,12 +6,10 @@ python-wrapper/src/*/*.cpp
 python-wrapper/__pycache__
 python-wrapper/benchmark/__pycache__
 python-wrapper/test/__pycache__
-python-wrapper/test/out
 
 # Ignore copied mnist file for launching example
 python-wrapper/mnist
 
-benchmark
 
 # Ignore files from Clion
 .idea

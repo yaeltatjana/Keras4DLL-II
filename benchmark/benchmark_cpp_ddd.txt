@@ -1,0 +1,30 @@
+======================= [ 3xdense_net - perf_init ] =======================
+Average: 0 ms
+Max: 2 ms
+Min: 0 ms
+
+======================= [ 3xdense_net - perf_display ] =======================
+Average: 0 ms
+Max: 0 ms
+Min: 0 ms
+
+======================= [ 3xdense_net - perf_display_pretty ] =======================
+Average: 0 ms
+Max: 0 ms
+Min: 0 ms
+
+======================= [ 3xdense_net - perf_train ] =======================
+Average: 9577 ms
+Max: 9730 ms
+Min: 9450 ms
+
+======================= [ 3xdense_net - perf_evaluate ] =======================
+Average: 10 ms
+Max: 10 ms
+Min: 10 ms
+
+======================= [ 3xdense_net - perf_all ] =======================
+Average: 9541 ms
+Max: 9629 ms
+Min: 9482 ms
+
