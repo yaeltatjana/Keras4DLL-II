@@ -27,6 +27,6 @@ cdef extern from "../../dll/python-wrapper-lib/networks/DenseDenseNet.h":
 
         void evaluate(TextReader& ds)
 
-        void storeWeights(string &file)
+        void storeWeights(string & file)
 
-        void loadWeights(string &file)
+        void loadWeights(string & file)

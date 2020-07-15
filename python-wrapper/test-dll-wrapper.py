@@ -148,5 +148,5 @@ if __name__ == "__main__":
     # test_DDDNet()
     # test_lenet()
     # test_alexnet()
-    #test_vggnet16()
+    # test_vggnet16()
     test_text_reader()

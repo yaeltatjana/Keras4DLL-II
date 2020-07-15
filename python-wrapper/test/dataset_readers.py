@@ -6,6 +6,7 @@ class TestReaders(unittest.TestCase):
     """
     Test class for dataset readers
     """
+
     def test_mnist(self):
         """
         Method to test the mnist reader

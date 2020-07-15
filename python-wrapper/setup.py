@@ -15,7 +15,6 @@ else:
     path = sys.argv[2]
     sys.argv.remove(path)  # remove so that cython can read properly its arguments
 
-
 # Setup configurations for compiling wrapper and python module
 setup(
     name="lib-dll",

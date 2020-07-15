@@ -35,7 +35,8 @@ cdef class PyAlexNet:
         """
         self.ptr.displayPretty()
 
-    def set_conv_layer(self, size_t layer, size_t inputChannels, size_t firstDim, size_t secDim, size_t nbFilters, size_t firstDimFilter, size_t secDimFilter):
+    def set_conv_layer(self, size_t layer, size_t inputChannels, size_t firstDim, size_t secDim, size_t nbFilters,
+                       size_t firstDimFilter, size_t secDimFilter):
         """
         Initialize a convolutional layer
         :param layer:               index of layer
@@ -55,7 +56,8 @@ cdef class PyAlexNet:
         """
         self.ptr.setConvLayer(layer, inputChannels, firstDim, secDim, nbFilters, firstDimFilter, secDimFilter)
 
-    def set_mp_layer(self, size_t layer, size_t inputChannels, size_t firstDim, size_t secDim, size_t firstDimPoolSize, size_t secDimPoolSize):
+    def set_mp_layer(self, size_t layer, size_t inputChannels, size_t firstDim, size_t secDim, size_t firstDimPoolSize,
+                     size_t secDimPoolSize):
         """
         Initialize max_pooling layer
         :param layer:               index of layer

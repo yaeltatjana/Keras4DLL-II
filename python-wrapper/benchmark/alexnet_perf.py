@@ -2,6 +2,7 @@ import dll
 import time
 from benchmark.common import *
 
+
 @benchmark("AlexNet")
 def perf_init(loops):
     t = []
@@ -48,6 +49,7 @@ def perf_train(loops, epochs, net, reader):
 @benchmark("AlexNet")
 def perf_evaluate(loops, epochs, net, reader):
     return perf_evaluate_generic(loops, epochs, net, reader)
+
 
 @benchmark("AlexNet")
 def perf_all(loops, reader, epochs):
@@ -100,4 +102,3 @@ def get_alexnet():
     net.set_adam_beta1(0.997)
     net.set_adam_beta2(0.997)
     return net
-

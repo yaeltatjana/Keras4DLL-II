@@ -42,11 +42,9 @@ if arg in readers:
     name = "test_" + arg
     suite.addTest(TestReaders(name))
 
-
 if arg in nets:
     name = "test_" + arg
     suite.addTest(TestNets(name))
-
 
 if __name__ == "__main__":
     runner = unittest.TextTestRunner(verbosity=2)  # to see which unittest is executed

@@ -106,5 +106,3 @@ cdef class PyDenseDenseDenseNet:
         :type file:     str
         """
         self.ptr.loadWeights(file.encode('utf-8'))
-
-

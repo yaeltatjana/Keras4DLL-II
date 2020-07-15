@@ -8,6 +8,7 @@ class TestNets(unittest.TestCase):
     """
     Class to test the networks
     """
+
     def test_dd(self):
         """
         Method to test the 2xdense net

@@ -10,9 +10,11 @@ cdef extern from "../../dll/python-wrapper-lib/networks/LeNet.h":
 
         void displayPretty()
 
-        void setConvLayer(size_t layer, size_t inputChannels, size_t firstDim, size_t secDim, size_t nbFilters, size_t firstDimFilter, size_t secDimFilter)
+        void setConvLayer(size_t layer, size_t inputChannels, size_t firstDim, size_t secDim, size_t nbFilters,
+                          size_t firstDimFilter, size_t secDimFilter)
 
-        void setMPLayer(size_t layer, size_t inputChannels, size_t firstDim, size_t secDim, size_t firstDimPoolSize, size_t secDimPoolSize)
+        void setMPLayer(size_t layer, size_t inputChannels, size_t firstDim, size_t secDim, size_t firstDimPoolSize,
+                        size_t secDimPoolSize)
 
         void setDenseLayer(size_t layer, size_t inputSize, size_t outputSize)
 
@@ -30,7 +32,6 @@ cdef extern from "../../dll/python-wrapper-lib/networks/LeNet.h":
 
         void evaluate(TextReader& ds)
 
-        void storeWeights(string &file)
+        void storeWeights(string & file)
 
-        void loadWeights(string &file)
-
+        void loadWeights(string & file)

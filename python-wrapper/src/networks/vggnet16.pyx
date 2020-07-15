@@ -35,7 +35,8 @@ cdef class PyVGGNet16:
         """
         self.ptr.displayPretty()
 
-    def set_conv_layer(self, size_t layer, size_t channels, size_t dim1, size_t dim2, size_t nb_filters, size_t filt1, size_t filt2):
+    def set_conv_layer(self, size_t layer, size_t channels, size_t dim1, size_t dim2, size_t nb_filters, size_t filt1,
+                       size_t filt2):
         """
         Initialize a convolutional layer
         :param layer:               index of layer
