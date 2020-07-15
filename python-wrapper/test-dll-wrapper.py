@@ -116,6 +116,7 @@ def test_vggnet16():
     net.set_dense_layer(19, 16, 12)
     net.set_dense_layer(20, 12, 10)
 
+    net.set_learning_rate(0.1)
     net.set_adam_beta1(0.997)
     net.set_adam_beta2(0.997)
 
@@ -128,7 +129,7 @@ def test_vggnet16():
 
 def test_text_reader():
     reader = dll.PyTextReader("../dll/test/text_db/images", "../dll/test/text_db/labels")
-    print(reader.read_labels()[0])
+    print(type(reader.read_images()))
 
     input = [28 * 28, 16]
     output = [16, 10]
@@ -140,11 +141,12 @@ def test_text_reader():
     net.evaluate(reader)
 
 
-# test_reader()
-# test_3d_reader()
-# test_DDNet()
-# test_DDDNet()
-# test_lenet()
-# test_alexnet()
-# test_vggnet16()
-# test_text_reader()
+if __name__ == "__main__":
+    # test_reader()
+    # test_3d_reader()
+    # test_DDNet()
+    # test_DDDNet()
+    # test_lenet()
+    # test_alexnet()
+    #test_vggnet16()
+    test_text_reader()

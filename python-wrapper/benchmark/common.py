@@ -5,7 +5,7 @@ import time
 
 def benchmark(name):
     def benchmark_func(func):
-        def decorated_func(file, loops, *args, **kwargs):
+        def decorate_func(file, loops, *args, **kwargs):
             arr = np.array(func(loops, *args, **kwargs))
             out = "======================= [ {name} - {func} ] =======================\n"
             out += "Average: {avg:.4f} seconds\nMax: {max:.4f} seconds\nMin: {min:.4f} seconds\n"
@@ -15,7 +15,7 @@ def benchmark(name):
             else:
                 file.write(out_formatted)
 
-        return decorated_func
+        return decorate_func
 
     return benchmark_func
 
@@ -51,10 +51,9 @@ def perf_train_generic(loops, epochs, net, reader):
 
 
 def perf_evaluate_generic(loops, epochs, net, reader):
-    net.fine_tune(reader, epochs)
-
     t = []
     for x in range(0, loops):
+        net.fine_tune(reader, epochs)
         start = time.time()
         net.evaluate(reader)
         end = time.time()

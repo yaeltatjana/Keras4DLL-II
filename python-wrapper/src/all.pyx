@@ -1,6 +1,5 @@
 #cython: language_level=3
 
-
 # Be careful, order is important ! if you need a module, it has to be imported before
 
 # fused types for dataset readers
@@ -11,7 +10,6 @@ ctypedef fused Reader:
 
 # import datasets
 include "datasets/mnist_reader.pyx"
-include "datasets/mnist_3d_reader.pyx"
 include "datasets/text_reader.pyx"
 
 # import networks, based on datasets

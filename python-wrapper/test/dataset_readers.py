@@ -2,20 +2,17 @@ import dll
 import unittest
 
 
-def test_mnist():
-    reader = dll.PyMnistReader()
-    reader.display()
-    reader.display_pretty()
-
-
-def test_text():
-    # nothing to be done
-    print()
-
-
 class TestReaders(unittest.TestCase):
+    """
+    Test class for dataset readers
+    """
     def test_mnist(self):
+        """
+        Method to test the mnist reader
+        """
         reader = dll.PyMnistReader()
+        reader.display()
+        reader.display_pretty()
         self.assertEqual(len(reader.read_dataset()), 4)
 
         self.assertEqual(len(reader.read_dataset()['training_images']), 60000)
@@ -33,6 +30,9 @@ class TestReaders(unittest.TestCase):
         self.assertEqual(reader.read_dataset()['test_labels'][:5], [7, 2, 1, 0, 4])
 
     def test_text(self):
+        """
+        Method to test the text reader
+        """
         reader = dll.PyTextReader("../dll/test/text_db/images", "../dll/test/text_db/labels")
         self.assertEqual(len(reader.read_images()), 9)
         self.assertEqual(len(reader.read_images()[0]), 784)

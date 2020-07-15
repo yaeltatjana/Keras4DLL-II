@@ -4,9 +4,14 @@ import unittest
 reader = dll.PyMnistReader()
 
 
-# can only test returned error of training
 class TestNets(unittest.TestCase):
+    """
+    Class to test the networks
+    """
     def test_dd(self):
+        """
+        Method to test the 2xdense net
+        """
         # first init
         net = dll.PyDenseDenseNet()
         net.set_layer_size(0, 28 * 28, 16)
@@ -26,17 +31,20 @@ class TestNets(unittest.TestCase):
         net.evaluate(reader)
 
     def test_ddd(self):
+        """
+        Method to test the 3xdense net
+        """
         # first init
         net = dll.PyDenseDenseDenseNet()
-        net.set_layer_size(0, 28 * 28, 16)
-        net.set_layer_size(1, 16, 16)
+        net.set_layer_size(0, 28 * 28, 32)
+        net.set_layer_size(1, 32, 16)
         net.set_layer_size(2, 16, 10)
         net.set_initial_momentum(0.85)
         net.display()
         net.display_pretty()
 
         # second init
-        net = dll.PyDenseDenseDenseNet([28 * 28, 16, 16], [16, 16, 10])
+        net = dll.PyDenseDenseDenseNet([28 * 28, 32, 16], [32, 16, 10])
         net.set_initial_momentum(0.85)
 
         net.display()
@@ -45,6 +53,9 @@ class TestNets(unittest.TestCase):
         net.evaluate(reader)
 
     def test_lenet(self):
+        """
+        Method to test LeNet
+        """
         net = dll.PyLeNet()
         net.set_conv_layer(0, 1, 28, 28, 6, 5, 5)
         net.set_mp_layer(1, 6, 24, 24, 2, 2)
@@ -62,6 +73,9 @@ class TestNets(unittest.TestCase):
         net.evaluate(reader)
 
     def test_alexnet(self):
+        """
+        Method to test AlexNet
+        """
         net = dll.PyAlexNet()
         net.set_conv_layer(0, 1, 28, 28, 12, 5, 5)
         net.set_mp_layer(1, 12, 24, 24, 2, 2)
@@ -85,6 +99,9 @@ class TestNets(unittest.TestCase):
         net.evaluate(reader)
 
     def test_vggnet16(self):
+        """
+        Method to test VGGNet16
+        """
         net = dll.PyVGGNet16()
         net.set_conv_layer(0, 1, 28, 28, 12, 5, 5)
         net.set_conv_layer(1, 12, 24, 24, 12, 1, 1)

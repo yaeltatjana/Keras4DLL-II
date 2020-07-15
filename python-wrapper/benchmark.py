@@ -67,7 +67,7 @@ if "lenet" in sys.argv:
 
 # ========================= AlexNet =========================
 if "alexnet" in sys.argv:
-    file = open(path_benchmark + prefix_file + "alexnet2.txt", "w")
+    file = open(path_benchmark + prefix_file + "alexnet.txt", "w")
     an.perf_init(file, 10000)
     an.perf_display(file, 10000, an.get_alexnet())
     an.perf_display_pretty(file, 10000, an.get_alexnet())
