@@ -1,0 +1,29 @@
+======================= [ dbn_vggnet16 - perf_init ] =======================
+Average: 0 ms
+Max: 0 ms
+Min: 0 ms
+
+======================= [ dbn_vggnet16 - perf_display ] =======================
+Average: 0 ms
+Max: 2 ms
+Min: 0 ms
+
+======================= [ dbn_vggnet16 - perf_display_pretty ] =======================
+Average: 0 ms
+Max: 6 ms
+Min: 0 ms
+
+======================= [ dbn_vggnet16 - perf_train ] =======================
+Average: 1.2746e+06 ms
+Max: 1.27738e+06 ms
+Min: 1.2731e+06 ms
+
+======================= [ dbn_vggnet16 - perf_evaluate ] =======================
+Average: 1164 ms
+Max: 1236 ms
+Min: 1075 ms
+
+======================= [ dbn_vggnet16 - perf_all ] =======================
+Average: 1.27682e+06 ms
+Max: 1.27871e+06 ms
+Min: 1.27508e+06 ms

@@ -1,0 +1,34 @@
+======================= [ 2xdense_net - perf_init1 ] =======================
+Average: 0.0004 seconds
+Max: 0.0200 seconds
+Min: 0.0003 seconds
+
+======================= [ 2xdense_net - perf_init2 ] =======================
+Average: 0.0004 seconds
+Max: 0.0038 seconds
+Min: 0.0003 seconds
+
+======================= [ 2xdense_net - perf_display ] =======================
+Average: 0.0000 seconds
+Max: 0.0183 seconds
+Min: 0.0000 seconds
+
+======================= [ 2xdense_net - perf_display_pretty ] =======================
+Average: 0.0001 seconds
+Max: 0.0358 seconds
+Min: 0.0000 seconds
+
+======================= [ 2xdense_net - perf_train ] =======================
+Average: 7.1169 seconds
+Max: 8.0123 seconds
+Min: 7.0157 seconds
+
+======================= [ 2xdense_net - perf_evaluate ] =======================
+Average: 0.0063 seconds
+Max: 0.0065 seconds
+Min: 0.0062 seconds
+
+======================= [ 2xdense_net - perf_all ] =======================
+Average: 7.0933 seconds
+Max: 7.1476 seconds
+Min: 6.9745 seconds

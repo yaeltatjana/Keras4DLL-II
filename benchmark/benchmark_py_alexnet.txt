@@ -1,0 +1,30 @@
+======================= [ AlexNet - perf_init ] =======================
+Average: 0.0002 seconds
+Max: 0.0017 seconds
+Min: 0.0002 seconds
+
+======================= [ AlexNet - perf_display ] =======================
+Average: 0.0001 seconds
+Max: 0.0271 seconds
+Min: 0.0000 seconds
+
+======================= [ AlexNet - perf_display_pretty ] =======================
+Average: 0.0001 seconds
+Max: 0.0344 seconds
+Min: 0.0000 seconds
+
+======================= [ AlexNet - perf_train ] =======================
+Average: 254.5480 seconds
+Max: 256.2158 seconds
+Min: 252.8878 seconds
+
+======================= [ AlexNet - perf_evaluate ] =======================
+Average: 0.4066 seconds
+Max: 0.4120 seconds
+Min: 0.3987 seconds
+
+======================= [ AlexNet - perf_all ] =======================
+Average: 257.0390 seconds
+Max: 259.6960 seconds
+Min: 253.7862 seconds
+

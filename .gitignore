@@ -1,9 +1,15 @@
-# Ignore generated .cpp wrapper file and build directory
-python-wrapper/wrapper.cpp
+# Ignore generated .cpp files and build directory
 python-wrapper/build
+python-wrapper/*.cpp
+python-wrapper/src/*.cpp
+python-wrapper/src/*/*.cpp
+python-wrapper/__pycache__
+python-wrapper/benchmark/__pycache__
+python-wrapper/test/__pycache__
 
 # Ignore copied mnist file for launching example
 python-wrapper/mnist
+
 
 # Ignore files from Clion
 .idea

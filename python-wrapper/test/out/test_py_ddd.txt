@@ -1,0 +1,56 @@
+Network with 3 layers
+    Dense(dyn): 784 -> RELU -> 32
+    Dense(dyn): 32 -> RELU -> 16
+    Dense(dyn): 16 -> SOFTMAX -> 10
+Total parameters: 13002
+
+ ------------------------------------------------------------
+ | Index | Layer                | Parameters | Output Shape |
+ ------------------------------------------------------------
+ | 0     | Dense(RELU) (dyn)    |      25120 | [Bx32]       |
+ | 1     | Dense(RELU) (dyn)    |        528 | [Bx16]       |
+ | 2     | Dense(SOFTMAX) (dyn) |        170 | [Bx10]       |
+ ------------------------------------------------------------
+                Total Parameters:      25818
+Network with 3 layers
+    Dense(dyn): 784 -> RELU -> 32
+    Dense(dyn): 32 -> RELU -> 16
+    Dense(dyn): 16 -> SOFTMAX -> 10
+Total parameters: 25818
+
+ ------------------------------------------------------------
+ | Index | Layer                | Parameters | Output Shape |
+ ------------------------------------------------------------
+ | 0     | Dense(RELU) (dyn)    |      25120 | [Bx16]       |
+ | 1     | Dense(RELU) (dyn)    |        528 | [Bx16]       |
+ | 2     | Dense(SOFTMAX) (dyn) |        170 | [Bx10]       |
+ ------------------------------------------------------------
+                Total Parameters:      25818
+
+Train the network with "Stochastic Gradient Descent"
+    Updater: MOMENTUM
+       Loss: CATEGORICAL_CROSS_ENTROPY
+ Early Stop: Goal(error)
+
+With parameters:
+          epochs=5
+      batch_size=100
+   learning_rate=0.1
+        momentum=0.85
+
+epoch   0/5 batch    1/ 600 - error: 0.88000 loss: 2.31367 ETA 0s
+epoch   0/5 batch  600/ 600 - error: 0.08478 loss: 0.28341 time 238ms 
+epoch   1/5 batch    1/ 600 - error: 0.07000 loss: 0.25417 ETA 0s
+epoch   1/5 batch  600/ 600 - error: 0.06538 loss: 0.21565 time 241ms 
+epoch   2/5 batch    1/ 600 - error: 0.08000 loss: 0.28679 ETA 0s
+epoch   2/5 batch  600/ 600 - error: 0.06160 loss: 0.19892 time 245ms 
+epoch   3/5 batch    1/ 600 - error: 0.04000 loss: 0.12431 ETA 0s
+epoch   3/5 batch  600/ 600 - error: 0.05632 loss: 0.18513 time 251ms 
+epoch   4/5 batch    1/ 600 - error: 0.03000 loss: 0.12607 ETA 0s
+epoch   4/5 batch  600/ 600 - error: 0.04680 loss: 0.15613 time 246ms 
+Training took 1s
+
+Evaluation Results
+   error: 0.05390 
+    loss: 0.18527 
+evaluation took 7ms 

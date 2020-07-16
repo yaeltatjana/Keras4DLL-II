@@ -1,0 +1,14 @@
+Dataset
+Training: In-Memory Data Generator
+              Size: 60000
+           Batches: 600
+Testing: In-Memory Data Generator
+              Size: 10000
+           Batches: 100
+
+ --------------------------------------------
+ | mnist | Size  | Batches | Augmented Size |
+ --------------------------------------------
+ | train | 60000 | 600     | 60000          |
+ | test  | 10000 | 100     | 10000          |
+ --------------------------------------------
