@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# script to launch the functional tests for the wrapper
 
 # you have to be in the directory python-wrapper
 if [ ! -d "test/out" ]

@@ -142,11 +142,11 @@ def test_text_reader():
 
 
 if __name__ == "__main__":
-    # test_reader()
+    test_reader()
     # test_3d_reader()
     # test_DDNet()
     # test_DDDNet()
     # test_lenet()
     # test_alexnet()
     # test_vggnet16()
-    test_text_reader()
+    # test_text_reader()
