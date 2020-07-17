@@ -16,4 +16,4 @@ python test.py dd > test/out/test_py_dd.txt
 python test.py ddd > test/out/test_py_ddd.txt
 python test.py lenet > test/out/test_py_lenet.txt
 python test.py alexnet > test/out/test_py_alexnet.txt
-python test.py vggnet16 > test/out/test_py_vggnet162.txt
+python test.py vggnet16 > test/out/test_py_vggnet16.txt
